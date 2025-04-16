@@ -1,0 +1,40 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Lab7AvaloniaUI.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="850"
+             x:Class="Lab7AvaloniaUI.Views.MainView"
+             x:DataType="vm:MainViewModel">
+	<Design.DataContext>
+		<vm:MainViewModel />
+	</Design.DataContext>
+
+	<StackPanel>
+		
+		<Border Margin="5" CornerRadius="10" Background="LightBlue">
+			<TextBlock Name="Title"
+                       Margin="5"
+                       FontSize="24"
+                       HorizontalAlignment="Center"
+                       Text="DNA Sequencer" />
+		</Border>
+
+		
+		<Grid ShowGridLines="True" Margin="5" ColumnDefinitions="80, 650" RowDefinitions="Auto, Auto, Auto">
+			<Label Grid.Row="0" Grid.Column="0">Sequence: </Label>
+			<TextBox Name="inp" Grid.Row="0" Grid.Column="1"/>
+		</Grid>
+
+		
+		<Button HorizontalAlignment="Center" Click="Button_OnClick">Calculate</Button>
+
+		
+		<Grid ShowGridLines="True" Margin="5" ColumnDefinitions="80, 650, 200" RowDefinitions="Auto, Auto, Auto">
+			<Label Grid.Row="0" Grid.Column="0">Output: </Label>
+			<TextBox Name="outp" Grid.Row="0" Grid.Column="1"/>
+			<Image Name="MyImage" Width="200" Height="200" Grid.Row="0" Grid.Column="2" PointerPressed="MyImage_OnClick"/>
+			<TextBox Name="traszka" Grid.Row="1" Grid.Column="2" Margin="0,5,0,0"/>
+		</Grid>
+	</StackPanel>
+</UserControl>
