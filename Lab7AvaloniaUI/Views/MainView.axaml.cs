@@ -2,9 +2,9 @@
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media.Imaging;
+using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Numerics;
+using System.IO;
 
 namespace Lab7AvaloniaUI.Views;
 
@@ -13,7 +13,9 @@ public partial class MainView : UserControl
     public MainView()
     {
         InitializeComponent();
-        var bitmap = new Bitmap("C:\\Users\\Satella\\source\\repos\\Lab7AvaloniaUI\\TRASZKA.JPG");
+        var exeDir = AppContext.BaseDirectory;
+        var imgPath = Path.Combine(exeDir, "Images", "TRASZKA.JPG");
+        var bitmap = new Bitmap(imgPath);
         MyImage.Source = bitmap;
 
     }
